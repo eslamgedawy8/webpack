@@ -9,8 +9,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"] // Compiles Sass to CSS then turn it to js and adds it to the DOM
       }
     ]
   }
