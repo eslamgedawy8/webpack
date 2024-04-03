@@ -1,4 +1,6 @@
 const path = require("path");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
@@ -6,6 +8,7 @@ module.exports = {
     filename: "main.[contentHash].js",
     path: path.resolve(__dirname, "dist")
   },
+  plugins: [new HtmlWebpackPlugin({ template: "./src/template.html" })],
   module: {
     rules: [
       {
@@ -13,5 +16,5 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"] // Compiles Sass to CSS then turn it to js and adds it to the DOM
       }
     ]
-  }
+  },
 };
